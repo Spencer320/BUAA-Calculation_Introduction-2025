@@ -235,11 +235,11 @@ int main()
 * 相关定义:
   * $\omega = x_1x_2...x_n$  
   * $\omega _{ij} = x_i...x_{i+j-1}$  
-  * $V_{ij}=\{A|A\Rightarrow ^*\omega_{ij}\}$  
+  * $V_{ij}=\lbrace A|A\Rightarrow ^*\omega_{ij}\rbrace$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
   * $若n\geqslant 2,判断(S \to BC) \in P, 且BC \Rightarrow ^+ \omega,即是否有:B \Rightarrow ^+\omega_{1k},C\Rightarrow ^+\omega _{(k+1)(n-k)}$
-  * $求V_{ij}=\char"007B A|(A\to BC)\in P \char"007D, 且B \in V_{ik},C\in V_{(i+k)(j-k)}$
+  * $求V_{ij}=\lbrace A|(A\to BC)\in P \rbrace, 且B \in V_{ik},C\in V_{(i+k)(j-k)}$
   * $判断S\in V_{1n},即说明\omega 能否被G识别$
 * 伪代码:
 ```

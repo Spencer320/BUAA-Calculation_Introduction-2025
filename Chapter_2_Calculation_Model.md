@@ -166,7 +166,7 @@ $┣ \space YXXXYYq_0B$
 $$
 \begin{aligned}
 M &= (\{q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7\},\\
-&\quad \{0,1,\char"0023 \}, \{0,1,\char"0023,T,B\}, \delta, q_0, B, \{q_7\}) 
+&\quad \{0,1,＃ \}, \{0,1,＃,T,B\}, \delta, q_0, B, \{q_7\}) 
 \end{aligned}
 $$
 
@@ -186,15 +186,15 @@ $$
 
 #### 识别过程示例
 以串"010#010"为例:
-$q_0010 \char"0023 010 $
-$┣ \space Tq_110 \char"0023 010 \space $
-$┣^* \space T10 \char"0023 q_3010 \space ┣ \space T10q_6 \char"0023 T10  \space $
-$┣^* \space Tq_010 \char"0023 T10 \space ┣ \space TTq_20 \char"0023 T10  \space $
-$┣^* \space TT0 \char"0023 Tq_410 \space ┣ \space TT0 \char"0023 q_6TT0  \space $
-$┣^* \space TTq_00 \char"0023 TT0 \space ┣ \space TTTq_1 \char"0023 TT0  \space $
-$┣^* \space TTT \char"0023 TTq_30 \space ┣ \space TTT \char"0023 Tq_6TT  \space $
-$┣^* \space TTq_5T \char"0023 TTT \space ┣ \space TTTq_0 \char"0023 TTT  \space $
-$┣ \space TTTq_7 \char"0023 TTT \space $
+$q_0010 ＃ 010 $
+$┣ \space Tq_110 ＃ 010 \space $
+$┣^* \space T10 ＃ q_3010 \space ┣ \space T10q_6 ＃ T10  \space $
+$┣^* \space Tq_010 ＃ T10 \space ┣ \space TTq_20 ＃ T10  \space $
+$┣^* \space TT0 ＃ Tq_410 \space ┣ \space TT0 ＃ q_6TT0  \space $
+$┣^* \space TTq_00 ＃ TT0 \space ┣ \space TTTq_1 ＃ TT0  \space $
+$┣^* \space TTT ＃ TTq_30 \space ┣ \space TTT ＃ Tq_6TT  \space $
+$┣^* \space TTq_5T ＃ TTT \space ┣ \space TTTq_0 ＃ TTT  \space $
+$┣ \space TTTq_7 ＃ TTT \space $
 
 ### 3.12 Class_3
 
@@ -205,7 +205,7 @@ $┣ \space TTTq_7 \char"0023 TTT \space $
 * 多维图灵机
 * 离线图灵机
 
-语言: $L(M)=\char"007B ω|q_0ω┣^*xq_fy\char"007D$ 称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
+语言: $L(M)=\lbrace ω|q_0ω┣^*xq_fy\rbrace$ 称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
 
 * 可识别(可递归枚举):如果有图灵机识别⼀个语言,则称该语⾔是图灵可识别的
 * 可判定:如果有图灵机对所有输⼊都停机,则称该语言图灵可判定
