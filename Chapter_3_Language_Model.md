@@ -234,7 +234,7 @@ int main()
 * 上下文无关语言,上下文无关语言的识别
 * 相关定义:
   * $\omega = x_1x_2...x_n$  
-  * $\omega _{ij} = x_i...x_{i+j-1}$  
+  * $\omega \\_{ij} = x\\_i...x\\_{i+j-1}$  
   * $V_{ij}=\\{A|A\Rightarrow ^*\omega_{ij}\\}$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
@@ -286,7 +286,7 @@ $Homework 4$
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
   * 空栈接受: $(q,\epsilon,\epsilon)$
-  * 空栈接受: $(q,\epsilon,\gamma),\gamma \in \Gamma \\^*$
+  * 空栈接受: $(q,\epsilon,\gamma),\gamma \in \Gamma ^*$
   * 对于确定PDA,两种接受不等价,但对于非确定PDA是等价的
 
 ## 正则语言可计算

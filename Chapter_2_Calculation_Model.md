@@ -353,7 +353,7 @@ __相关定义__:
   * $fv_{((E))} = fv_{(E)}$
 * 替换: $E[E_0/x]$ :将 E 中 x 的自由出现用 E<sub>0</sub> 替代.  
   * $E \equiv x$  :  $x[E_0/x] = E_0$  
-  * $E \equiv y$ 且  $x \neq y  $ : $y[E_0/x] = y$  
+  * $E \equiv y$ 且  $x \neq y$ : $y[E_0/x] = y$  
   * $E \equiv E_1,E_2$ : $(E_1 \, E_2)[E_0/x] = (E_1[E_0/x]) \, (E_2[E_0/x])$  
   * $E \equiv \lambda x. E'$ : $(\lambda x. E')[E_0/x] = \lambda x. E'$  
   * $E \equiv \lambda y. E'$ ,且 $x \neq y $,若 $x \in fv(E')$ :
@@ -361,9 +361,9 @@ __相关定义__:
     * 否则: $(\lambda y. E')[E_0/x] = \lambda y. E'[E_0/x]$ 
 
 __变换规则__:
-* α变换(换名规则): $\lambda x . E \rightarrow \\_\alpha \lambda y . E[y/x]$ ,其中 $x \not = y$ 且 $y \notin fv\\_{(E)}$  
-* β变换(应用规则): $(\lambda x . E)E_0 \rightarrow \\_\beta E[E_0/x]$  
-* η变换(保值变换): $(\lambda x . M x) \rightarrow \\_\eta M$ ,其中 $x \notin fv\\_{(M)}$  
+* α变换(换名规则): $\lambda x . E \rightarrow _\alpha \lambda y . E[y/x] ,其中 x \not = y 且 $y \notin fv_{(E)}$  
+* β变换(应用规则): $(\lambda x . E)E_0 \rightarrow _\beta E[E_0/x]$  
+* η变换(保值变换): $(\lambda x . M x) \rightarrow _\eta M ,其中 x \notin fv_{(M)}$  
 
 __归约__:
 * 归约基:__β变换和η变换__ 的左部
