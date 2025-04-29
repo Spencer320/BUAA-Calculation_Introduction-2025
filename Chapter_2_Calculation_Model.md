@@ -359,11 +359,11 @@ __相关定义__:
   * $E \equiv \lambda y. E'$ ,且 $x \neq y $,若 $x \in fv(E')$ :
     * $y \in fv(E_0)$ : $(\lambda y. E')[E_0/x] = \lambda z. E'[z/y][E_0/x]$ 
     * 否则: $(\lambda y. E')[E_0/x] = \lambda y. E'[E_0/x]$ 
-
+ 
 __变换规则__:
-* α变换(换名规则): $\lambda x . E \rightarrow _\alpha \lambda y . E[y/x] ,其中 x \not = y 且 $y \notin fv_{(E)}$  
-* β变换(应用规则): $(\lambda x . E)E_0 \rightarrow _\beta E[E_0/x]$  
-* η变换(保值变换): $(\lambda x . M x) \rightarrow _\eta M ,其中 x \notin fv_{(M)}$  
+* α 变换(换名规则): $\lambda x . E \to_{\alpha} \lambda y . E[y/x]$，其中 $x \neq y$ 且 $y \notin fv(E)$
+* β 变换(应用规则): $(\lambda x . E) E_0 \to_{\beta} E[E_0/x]$
+* η 变换(保值变换): $(\lambda x . M x) \to_{\eta} M$，其中 $x \notin fv(M)$
 
 __归约__:
 * 归约基:__β变换和η变换__ 的左部

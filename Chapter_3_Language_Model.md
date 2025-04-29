@@ -271,18 +271,19 @@ $Homework 4$
 ## 下推自动机
 * 下推自动机(PDA)是一种抽象的计算模型
 * 下推自动机比有限状态自动机复杂:比自动机多一个长度不受限制的栈.
-* PDM定义: $M=(Q,\Gamma,\sum,\epsilon,\delta,q_0,Z_0,F)$
+* PDM定义: $M=(Q,\Gamma,\Sigma,\epsilon,\delta,q_0,Z_0,F)$
   * $Q:有限状态集$
   * $\Gamma :栈符号集$
-  * $\sum :输入符号集$
+  * $\Sigma :输入符号集$
   * $q_0 \in Q :初始状态$
   * $Z_0 :栈初始符号$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
-* 确定/非确定PDA
-  * 确定: $Q\times (\sum \times \Gamma \\^*)\rarr Q\times \Gamma \\^*$  
-  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma \\^*)\rarr Q\times \Gamma \\^*$  
-  * 确定PDA与非确定PDA是等价的
+* 确定/非确定 PDA
+  * 确定： $Q \times (\Sigma \times \Gamma^*) \to Q \times \Gamma^*$
+  * 非确定： $Q \times (\Sigma \cup \{\epsilon\} \times \Gamma^*) \to Q \times \Gamma^*$
+  * 确定 PDA 与 非确定 PDA 是等价的  
+
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
   * 空栈接受: $(q,\epsilon,\epsilon)$
