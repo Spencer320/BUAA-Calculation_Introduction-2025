@@ -80,13 +80,11 @@ V.设计一台图灵机,接受由0和1组成的,且0与1出现次数相同,0先�
     计算的长度为格局转换个数.
 
 VI.设有图灵机 $M =(\{q_0,q_1\}, \{0,1\}, \{0,1,B\}, δ, q_0, B, f)$, 其中转换函数δ定义为：
-<figure>
 
 $δ(q_0,0) = (q_1,(0,R))$, $δ(q_0,1) = (q_1,(1,R))$,
 $δ(q_0,B) = (q_1,(B,R))$, $δ(q_1,0) = (q_0,0,L)$, 
 $δ(q_1,1) = (q_0,1,L)$, $δ(q_1,B) = (q_0,B,L)$.
 
-</figure>
 
 本例说明了并不是所有输入都"合法".如输入01,10,执行永远无法到达终点
 
@@ -161,14 +159,19 @@ $┣ \space YXXXYYq_0B$
   * $q_4$:在#右侧,待匹配1
   * $q_5$:#左侧回溯状态
   * $q_6$:#右侧回溯状态
-  * $q_7$:终止状态,当且仅当处于$q_0$时输入为'#'时接受识别
+  * $q_7$:终止状态,当且仅当处于 $q_0$ 时输入为'#'时接受识别
 
 #### 图灵机定义:  
 
-$$\begin{aligned}
-M  =&(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7\},\newline 
- &\{0,1,\\#\}, \{0,1,\\#,T,B\}, δ, q_0, B, \{q_7\})
- \end{aligned},其中:$$  
+$$
+\begin{aligned}
+M &= (\{q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7\},\\
+&\quad \{0,1,\#\}, \{0,1,\#,T,B\}, \delta, q_0, B, \{q_7\})
+\end{aligned}
+$$
+
+其中：
+
 
 | $\delta$ | 0           | 1           | #             | T           | B   |
 | -------- | ----------- | ----------- | ------------- | ----------- | --- |
@@ -183,15 +186,15 @@ M  =&(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7\},\newline
 
 #### 识别过程示例
 以串"010#010"为例:
-$q_0010 \\# 010 $
-$┣ \space Tq_110 \\# 010 \space $
-$┣^* \space T10 \\# q_3010 \space ┣ \space T10q_6 \\# T10  \space $
-$┣^* \space Tq_010 \\# T10 \space ┣ \space TTq_20 \\# T10  \space $
-$┣^* \space TT0 \\# Tq_410 \space ┣ \space TT0 \\# q_6TT0  \space $
-$┣^* \space TTq_00 \\# TT0 \space ┣ \space TTTq_1 \\# TT0  \space $
-$┣^* \space TTT \\# TTq_30 \space ┣ \space TTT \\# Tq_6TT  \space $
-$┣^* \space TTq_5T \\# TTT \space ┣ \space TTTq_0 \\# TTT  \space $
-$┣ \space TTTq_7 \\# TTT \space $
+$q_0010 \#\ 010 $
+$┣ \space Tq_110 \#\ 010 \space $
+$┣^* \space T10 \#\ q_3010 \space ┣ \space T10q_6 \#\ T10  \space $
+$┣^* \space Tq_010 \#\ T10 \space ┣ \space TTq_20 \#\ T10  \space $
+$┣^* \space TT0 \#\ Tq_410 \space ┣ \space TT0 \#\ q_6TT0  \space $
+$┣^* \space TTq_00 \#\ TT0 \space ┣ \space TTTq_1 \#\ TT0  \space $
+$┣^* \space TTT \#\ TTq_30 \space ┣ \space TTT \#\ Tq_6TT  \space $
+$┣^* \space TTq_5T \#\ TTT \space ┣ \space TTTq_0 \#\ TTT  \space $
+$┣ \space TTTq_7 \#\ TTT \space $
 
 ### 3.12 Class_3
 
@@ -202,7 +205,7 @@ $┣ \space TTTq_7 \\# TTT \space $
 * 多维图灵机
 * 离线图灵机
 
-语言: $L(M) = \{ω|q_0ω┣*xq_fy\}$ 称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
+语言: $L(M)=\{ω|q_0ω┣^*xq_fy\}$ 称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
 
 * 可识别(可递归枚举):如果有图灵机识别⼀个语言,则称该语⾔是图灵可识别的
 * 可判定:如果有图灵机对所有输⼊都停机,则称该语言图灵可判定
