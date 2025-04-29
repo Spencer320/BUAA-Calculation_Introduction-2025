@@ -206,7 +206,7 @@ int main()
 
 实例识别过程:
 以串"01011011"为例:
-- $a_1 = 0,B_1 = 1011011$ ,由于有 $S \rightarrow 0A$ ,即判断$B_1 \rightarrow a_2...a_8$是否成立.
+- $a_1 = 0,B_1 = 1011011$ ,由于有 $S \rightarrow 0A$ ,即判断 $B_1 \rightarrow a_2...a_8$ 是否成立.
 - $a_2 = 1,B_2 = 011011,A \rightarrow 1B \Rightarrow B2 \rightarrow a_3...a_8$ 
 - $a_3 = 0,B_3 = 11011,B \rightarrow 0A \Rightarrow B3 \rightarrow a_4...a_8$ 
 - $a_4 = 1,B_4 = 1011,A \rightarrow 1B \Rightarrow B4 \rightarrow a_5...a_8$ 
@@ -239,7 +239,7 @@ int main()
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
   * $若n\geqslant 2,判断(S \to BC) \in P, 且BC \Rightarrow ^+ \omega,即是否有:B \Rightarrow ^+\omega_{1k},C\Rightarrow ^+\omega _{(k+1)(n-k)}$
-  * $求V{ij}={A|(A\to BC)\in P}, 且B \in V_{ik},C\in V_{(i+k)(j-k)}$
+  * $求V_{ij}=\{A|(A\to BC)\in P \}, 且B \in V_{ik},C\in V_{(i+k)(j-k)}$
   * $判断S\in V_{1n},即说明\omega 能否被G识别$
 * 伪代码:
 ```
@@ -281,7 +281,7 @@ $Homework 4$
   * $\delta :转换函数$
 * 确定/非确定PDA
   * 确定: $Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
-  * 非确定: $Q\times (\sum \cup \{\epsilon\} \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
+  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
   * 确定PDA与非确定PDA是等价的
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:

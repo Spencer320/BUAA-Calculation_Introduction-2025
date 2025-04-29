@@ -352,12 +352,12 @@ __相关定义__:
   * $fv_{(\lambda x . E)} = fv_{(E)} - \{x\}$
   * $fv_{((E))} = fv_{(E)}$
 * 替换: $E[E_0/x]$ :将 E 中 x 的自由出现用 E<sub>0</sub> 替代.  
-  * $E \equiv x $  :  $x[E_0/x] = E_0$  
-  * $E \equiv y  $ 且  $ x \neq y  $ : $y[E_0/x] = y$  
+  * $E \equiv x$  :  $x[E_0/x] = E_0$  
+  * $E \equiv y$ 且  $x \neq y  $ : $y[E_0/x] = y$  
   * $E \equiv E_1 \, E_2 $ : $(E_1 \, E_2)[E_0/x] = (E_1[E_0/x]) \, (E_2[E_0/x])$  
   * $E \equiv \lambda x. E' $ : $(\lambda x. E')[E_0/x] = \lambda x. E'$  
-  * $E \equiv \lambda y. E' $ ,且  $ x \neq y $ ,若 $ x \in fv(E') $ :
-    * $ y \in fv(E_0) $ : $(\lambda y. E')[E_0/x] = \lambda z. E'[z/y][E_0/x]$ 
+  * $E \equiv \lambda y. E'$ ,且 $x \neq y $,若 $x \in fv(E')$ :
+    * $y \in fv(E_0) $ : $(\lambda y. E')[E_0/x] = \lambda z. E'[z/y][E_0/x]$ 
     * 否则: $(\lambda y. E')[E_0/x] = \lambda y. E'[E_0/x]$ 
 
 __变换规则__:
