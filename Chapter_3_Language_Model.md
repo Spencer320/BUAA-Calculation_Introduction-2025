@@ -172,14 +172,18 @@ int main()
 ```
 
 ### 正则文法识别子串
-正则文法如下:  
-文法 *G* 的定义如下:  
+正则文法 *G* 如下:    
 $$\begin{aligned}
 G=(&\lbrace S, A, B, C\rbrace, \lbrace 0,1\rbrace, S,
      \newline &\lbrace S\to 0A,S\to 1S,
      \newline & A\to 0A,A\to 1B, B\to 0A,B\to 1C,
      \newline & C\to 0C,C\to 1C, C\to 0,C\to 1\rbrace)
 \end{aligned}$$  
+
+$$\begin{aligned}
+(λx.xz)(λy.y) &\rightarrow _\beta  (λy.y)z
+\newline &\rightarrow _\beta z
+\end{aligned}$$ 
 
 具体解释如下:
 - $V = \lbrace S, A, B, C\rbrace$
