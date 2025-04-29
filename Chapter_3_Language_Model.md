@@ -235,7 +235,7 @@ int main()
 * 相关定义:
   * $\omega = x_1x_2...x_n$  
   * $\omega _{ij} = x_i...x_{i+j-1}$  
-  * $V_{ij}=\{A|A\Rightarrow ^*\omega_{ij}\}$  
+  * $V_{ij}=\\{A|A\Rightarrow ^*\omega_{ij}\\}$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
   * $若n\geqslant 2,判断(S \to BC) \in P, 且BC \Rightarrow ^+ \omega,即是否有:B \Rightarrow ^+\omega_{1k},C\Rightarrow ^+\omega _{(k+1)(n-k)}$
@@ -261,10 +261,10 @@ return !V[1][n].empty()
 ```
 
 $Homework 4$
-将下面文法转换为乔姆斯基范式
-    S &rarr; aSbS
-    S &rarr; bSaS
-    S &rarr; e
+将下面文法转换为乔姆斯基范式  
+    S &rarr; aSbS  
+    S &rarr; bSaS  
+    S &rarr; e  
 并给出一识别实例abaabb的倒三角形求法
 
 ### 4.16 Class_8
@@ -280,13 +280,13 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定PDA
-  * 确定: $Q\times (\sum \times \Gamma ^{*})\rarr Q\times \Gamma ^{*}$  
-  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma ^{*})\rarr Q\times \Gamma ^{*}$  
+  * 确定: $Q\times (\sum \times \Gamma \\^*)\rarr Q\times \Gamma \\^*$  
+  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma \\^*)\rarr Q\times \Gamma \\^*$  
   * 确定PDA与非确定PDA是等价的
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
   * 空栈接受: $(q,\epsilon,\epsilon)$
-  * 空栈接受: $(q,\epsilon,\gamma),\gamma \in \Gamma ^*$
+  * 空栈接受: $(q,\epsilon,\gamma),\gamma \in \Gamma \\^*$
   * 对于确定PDA,两种接受不等价,但对于非确定PDA是等价的
 
 ## 正则语言可计算
