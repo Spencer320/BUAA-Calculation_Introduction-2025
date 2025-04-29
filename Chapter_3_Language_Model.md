@@ -176,10 +176,10 @@ int main()
 文法 *G* 的定义如下:  
 $$
 \begin{aligned}
-G = (&\lbrace S, A, B, C\rbrace, \lbrace 0,1\rbrace, S,\\
-     &\lbrace \,S\to0A,S\to1S,\\
-     & A\to0A,A\to1B, B\to0A,B\to1C,\\
-     & C\to0C,C\to1C, C\to0,C\to1\,\rbrace)
+G = (&\lbrace S, A, B, C\rbrace, \lbrace 0,1\rbrace, S,\\\
+     &\lbrace S\to0A,S\to1S,\\\
+     & A\to0A,A\to1B, B\to0A,B\to1C,\\\
+     & C\to0C,C\to1C, C\to0,C\to1\rbrace)
 \end{aligned}
 $$  
 
