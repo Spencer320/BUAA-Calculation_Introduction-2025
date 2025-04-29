@@ -173,24 +173,23 @@ int main()
 
 ### 正则文法识别子串
 正则文法如下:  
-文法 *G* 的定义如下：
-𝐺 = (  
-    {𝑆, 𝐴, 𝐵, 𝐶}, {0, 1}, 𝑆,  
-    {  
-        𝑆 → 0𝐴,   𝑆 → 1𝑆,  
-        𝐴 → 0𝐴,   𝐴 → 1𝐵,  
-        𝐵 → 0𝐴,   𝐵 → 1𝐶,  
-        𝐶 → 0𝐶,   𝐶 → 1𝐶,  
-        𝐶 → 0,    𝐶 → 1  
-    }  
-)
+文法 *G* 的定义如下:
+$$
+\begin{aligned}
+G = (&\lbrace S, A, B, C\rbrace, \lbrace 0,1\rbrace, S,\\
+     &\lbrace \,S\to0A,\;S\to1S,\\
+     &\quad A\to0A,\;A\to1B, B\to0A,\;B\to1C,\\
+     &\quad C\to0C,\;C\to1C, C\to0,\;C\to1\,\rbrace)
+\end{aligned}
+$$
+
 具体解释如下:
-- $V = \{S, A, B, C\}$
+- $V = \lbrace S, A, B, C\rbrace$
   1. $S$ 表示初始状态
   2. $A$ 表示读到子串0
   3. $B$ 表示读到子串01
   4. $C$ 表示读到串011
-- $T = \{0, 1\}$ 
+- $T = \lbrace 0, 1\rbrace$ 
 - $S$  为开始符
 - $P$  为产生式集合，具体为：
   1. $S \rightarrow 0A$ 
