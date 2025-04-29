@@ -280,8 +280,8 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定PDA
-  * 确定: $Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
-  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
+  * 确定: $Q\times (\sum \times \Gamma ^{*})\rarr Q\times \Gamma ^{*}$  
+  * 非确定: $Q\times (\sum \cup \{ \epsilon \} \times \Gamma ^{*})\rarr Q\times \Gamma ^{*}$  
   * 确定PDA与非确定PDA是等价的
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
