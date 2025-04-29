@@ -21,7 +21,7 @@
   * T:终结符集合
   * S:文法开始符
   * P:产生式集合,其中产生式形如 $A \to a 或 A \to aB,a\in T,A,B\in V$
-* 正则语言:由G生成的语言,即 $L_{(G)}=\{\omega \mid \omega \in T^* \text{且} S\Rightarrow^* \omega\}$
+* 正则语言:由G生成的语言,即 $L_{(G)}=\lbrace \omega \mid \omega \in T^* \text{且} S\Rightarrow^* \omega\rbrace$
 * 正则语言的识别:对于文法G,任给串ω能否被G识别
   * 也就是证明是否有 $S \Rightarrow *\omega$
   * 设 $\omega = a_1a_2a_3...a_n,a_i\in T$,若n:
@@ -30,9 +30,9 @@
     * 重复上述过程
   * 算法描述:从右向左推导
     * P中选择右边为串ω的最右字符 $a_n$, 符合条件的产生式左边的非终极符组成一个集合 $V_1$ ,即:
-    * $V_1=\{A_1 | A_1 \rightarrow a_n \in P\}$,同理:
+    * $V_1=\lbrace A_1 | A_1 \rightarrow a_n \in P\rbrace$,同理:
     * ...
-    * $V_k=\{A_k | A_k \rightarrow a_{n-k+1}A_{k-1} \in P,且A_{k-1}\in V_{k-1}\}$
+    * $V_k=\lbrace A_k | A_k \rightarrow a_{n-k+1}A_{k-1} \in P,且A_{k-1}\in V_{k-1}\rbrace$
     * $V_n=...$,检查 $S$ 是否属于 $V_n$ ,若是,则可以由 $S$ 推导出 $\omega$ ,否则不能
   * 伪代码实现
 ```
@@ -234,7 +234,7 @@ int main()
 * 上下文无关语言,上下文无关语言的识别
 * 相关定义:
   * $\omega = x_1x_2...x_n$  
-  * $\omega _{ij} = x_i...x_{i+j-1}$  
+  * $\omega \\_{ij} = x\\_i...x_{i+j-1}$  
   * $V_{ij}=\lbrace A|A\Rightarrow ^*\omega_{ij}\rbrace$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
@@ -280,7 +280,7 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定 PDA
-  * 确定： $Q \times (\Sigma \times \Gamma^*) \to Q \times \Gamma^*$
+  * 确定： $Q \times (\Sigma \times \Gamma \\^ *) \to Q \times \Gamma \\^ *$
   * 非确定： $Q \times (\Sigma \cup \{\epsilon\} \times \Gamma^*) \to Q \times \Gamma^*$
   * 确定 PDA 与 非确定 PDA 是等价的  
 

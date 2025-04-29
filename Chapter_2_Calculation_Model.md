@@ -53,7 +53,7 @@ if(status == q) then {
 //线性带上a被清空,同时读写头不动
 ```
 
-IV. 有图灵机 $M=(\{q_0,q_1,q_2\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_2\})$ ,
+IV. 有图灵机 $M=(\lbrace q_0,q_1,q_2\rbrace ,\lbrace 0,1\rbrace ,\lbrace 0,1,B\rbrace ,\delta,q_0,B,\lbrace q_2\rbrace )$ ,
 其中: $\delta(q_0,0)=(q_0,0,R)$ , $\delta(q_0,1)=(q_1,1,R)$ , $\delta(q_1,0)=(q_1,0,R)$ , $\delta(q_1,B)=(q_2,2,R)$  
 表达方法:状态转移图/表
 以表为例,
@@ -79,7 +79,7 @@ V.设计一台图灵机,接受由0和1组成的,且0与1出现次数相同,0先�
     计算是从初始格局到终止格局按照动作函数规定的规则进行的一系列转换的格局转换序列.
     计算的长度为格局转换个数.
 
-VI.设有图灵机 $M =(\{q_0,q_1\}, \{0,1\}, \{0,1,B\}, δ, q_0, B, f)$, 其中转换函数δ定义为：
+VI.设有图灵机 $M =(\lbrace q_0,q_1\rbrace , \lbrace 0,1\rbrace , \lbrace 0,1,B\rbrace , δ, q_0, B, f)$, 其中转换函数δ定义为：
 
 $δ(q_0,0) = (q_1,(0,R))$, $δ(q_0,1) = (q_1,(1,R))$,
 $δ(q_0,B) = (q_1,(B,R))$, $δ(q_1,0) = (q_0,0,L)$, 
@@ -116,7 +116,7 @@ $Homework 1:$
   * $q_5$:终止态
   
 #### 图灵机定义:
-$M =(\{q_0,q_1,q_2,q_3,q_4,q_5\}, \{0,1\}, \{0,1,X,Y,B\}, δ, q_0, B, \{q_5\})$,其中:
+$M =(\lbrace q_0,q_1,q_2,q_3,q_4,q_5\rbrace , \lbrace 0,1\rbrace , \lbrace 0,1,X,Y,B\rbrace , δ, q_0, B, \lbrace q_5\rbrace )$,其中:
 
 | $\delta$ | 0           | 1           | X           | Y           | B           |
 | -------- | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -165,8 +165,8 @@ $┣ \space YXXXYYq_0B$
 
 $$
 \begin{aligned}
-M &= (\{q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7\},\\
-&\quad \{0,1,＃ \}, \{0,1,＃,T,B\}, \delta, q_0, B, \{q_7\}) 
+M &= (\lbrace q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7\rbrace ,\\
+&\quad \lbrace 0,1,＃ \rbrace , \lbrace 0,1,＃,T,B\rbrace , \delta, q_0, B, \lbrace q_7\rbrace ) 
 \end{aligned}
 $$
 
@@ -350,9 +350,9 @@ __相关定义__:
   * 当变量 x 出现的位置不被任一表达式约束时, x 的出现为自由出现
 * 自由变量: x 在 E 中自由出现时, x 是 E 中的自由变量
   * 用 $fv_{(E)}$ 表示E中所有自由变量集
-  * $fv_{(x)} = \{x\}$
+  * $fv_{(x)} = \lbrace x\rbrace $
   * $fv_{(E_1 E_2)} = fv_{(E_1)} \cup fv_{(E_2)}$
-  * $fv_{(\lambda x . E)} = fv_{(E)} - \{x\}$
+  * $fv_{(\lambda x . E)} = fv_{(E)} - \lbrace x\rbrace $
   * $fv_{((E))} = fv_{(E)}$
 * 替换: $E[E_0/x]$ :将 E 中 x 的自由出现用 E<sub>0</sub> 替代.  
   * $E \equiv x$  :  $x[E_0/x] = E_0$  
