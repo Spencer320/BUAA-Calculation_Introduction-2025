@@ -1,14 +1,14 @@
 # 计算模型
 ### 2.26 Class_1
 ## 图灵机模型
-1.图灵机组成
+1. 图灵机组成
 * 两端无限的线性带(读写介质)
 * 有限的符号表(表示信息)
 * 有限的信息处理状态
 * 信息处理动作
 * 信息处理方法/规则
 
-2.形式化定义
+2. 形式化定义
 一个图灵机(Turing Machine)可以七元组形式化定义为：
 * **M = (Q, ∑, Γ, δ, B, q₀, F)**,其中:
 * Q(状态集合): 状态的有限集合.  
@@ -20,7 +20,7 @@
 * δ(转移函数):  **δ: Q × Γ → Q × (Γ × {L, R, S})** 的函数,定义状态和符号的转移规则(`L` 左移,`R` 右移,`S` 保持不动).
 
 ### 3.5 Class_2
-$Rome Number Title:example$
+$Rome Number Title:example$  
 I. $\delta(q, a) = (p, (b, L))$
 ```    
 if(status == q) then {
@@ -53,8 +53,8 @@ if(status == q) then {
 //线性带上a被清空,同时读写头不动
 ```
 
-IV. 有图灵机$M=(\{q_0,q_1,q_2\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_2\})$,
-其中:$\delta(q_0,0)=(q_0,0,R)$,$\delta(q_0,1)=(q_1,1,R)$,$\delta(q_1,0)=(q_1,0,R)$,$\delta(q_1,B)=(q_2,2,R)$
+IV. 有图灵机 $M=(\{q_0,q_1,q_2\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_2\})$ ,
+其中: $\delta(q_0,0)=(q_0,0,R)$ , $\delta(q_0,1)=(q_1,1,R)$ , $\delta(q_1,0)=(q_1,0,R)$ , $\delta(q_1,B)=(q_2,2,R)$  
 表达方法:状态转移图/表
 以表为例,
 | $\delta$     | 0           | 1           | B           |
@@ -71,12 +71,11 @@ V.设计一台图灵机,接受由0和1组成的,且0与1出现次数相同,0先�
   * 设计状态数,符号.初始状态和终止状态
   * 绘制状态转移图,得到转移函数
 
-4.
-格局:当前状态,当前带内容和读写头位置组成的,对机器状态的表示
+3. 格局:当前状态,当前带内容和读写头位置组成的,对机器状态的表示
     设计格局包括初始格局,终止格局和格局转换(C1产生C2,记作C1├ C2) 
     ┣*:表示转换关系的自反/传递闭包,即多步转换
     
-计算:$q_0ω┣*xq_fy$称为称为一个以ω为输入,xy为输出的计算,即
+4. 计算: $q_0ω┣*xq_fy$ 称为称为一个以ω为输入,xy为输出的计算,即
     计算是从初始格局到终止格局按照动作函数规定的规则进行的一系列转换的格局转换序列.
     计算的长度为格局转换个数.
 
@@ -141,7 +140,7 @@ $┣ \space YXXXq_1Y1 \space ┣ \space YXXXYq_11  \space $
 $┣ \space YXXXq_2YY \space ┣ \space YXXq_2XYY  \space ┣ \space YXXXq_0YY  \space ┣ \space YXXXYq_0Y  \space $
 $┣ \space YXXXYYq_0B$
 又以串"1000111"为例:
-其他同上,到$┣ \space YXXXYYq_01 \space ┣ \space YXXXYYq_3B$后拒绝停机
+其他同上,到 $┣ \space YXXXYYq_01 \space ┣ \space YXXXYYq_3B$ 后拒绝停机
 
 ### 2.设计图灵机识别字符串形如w#w,其中w是由0,1构成的字符串
 #### 设计思路：
@@ -164,45 +163,46 @@ $┣ \space YXXXYYq_0B$
   * $q_6$:#右侧回溯状态
   * $q_7$:终止状态,当且仅当处于$q_0$时输入为'#'时接受识别
 
-#### 图灵机定义:
+#### 图灵机定义:  
+
 $$\begin{aligned}
 M  =&(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7\},\newline 
  &\{0,1,\#\}, \{0,1,\#,T,B\}, δ, q_0, B, \{q_7\})
- \end{aligned},其中:$$
+ \end{aligned},其中:$$  
+
 | $\delta$ | 0           | 1           | #             | T           | B   |
 | -------- | ----------- | ----------- | ------------- | ----------- | --- |
-| $q_0$    | ($q_1,T,R$) | ($q_2,T,R$) | ($q_7$,#,$S$) | -           | -   |
-| $q_1$    | ($q_1,0,R$) | ($q_1,1,R$) | ($q_3$,#,$R$) | -           | -   |
-| $q_2$    | ($q_2,0,R$) | ($q_2,1,R$) | ($q_4$,#,$R$) | -           | -   |
+| $q_0$    | ($q_1,T,R$) | ($q_2,T,R$) | ($q_7$,#, $S$) | -           | -   |
+| $q_1$    | ($q_1,0,R$) | ($q_1,1,R$) | ($q_3$,#, $R$) | -           | -   |
+| $q_2$    | ($q_2,0,R$) | ($q_2,1,R$) | ($q_4$,#, $R$) | -           | -   |
 | $q_3$    | ($q_6,T,L$) | -           | -             | ($q_3,T,R$) | -   |
 | $q_4$    | -           | ($q_6,T,L$) | -             | ($q_4,T,R$) | -   |
 | $q_5$    | ($q_5,0,L$) | ($q_5,1,L$) | -             | ($q_0,T,R$) | -   |
-| $q_6$    | -           | -           | ($q_5$,#,$L$) | ($q_6,T,L$) | -   |
+| $q_6$    | -           | -           | ($q_5$,#, $L$) | ($q_6,T,L$) | -   |
 | $q_7$    | -           | -           | -             | -           | -   |
 
 #### 识别过程示例
 以串"010#010"为例:
-$q_0010\#010 $
-$┣ \space Tq_110\#010 \space $
-$┣^* \space T10\#q_3010 \space ┣ \space T10q_6\#T10  \space $
-$┣^* \space Tq_010\#T10 \space ┣ \space TTq_20\#T10  \space $
-$┣^* \space TT0\#Tq_410 \space ┣ \space TT0\#q_6TT0  \space $
-$┣^* \space TTq_00\#TT0 \space ┣ \space TTTq_1\#TT0  \space $
-$┣^* \space TTT\#TTq_30 \space ┣ \space TTT\#Tq_6TT  \space $
-$┣^* \space TTq_5T\#TTT \space ┣ \space TTTq_0\#TTT  \space $
-$┣ \space TTTq_7\#TTT \space $
+$q_0010 \# 010 $
+$┣ \space Tq_110 \# 010 \space $
+$┣^* \space T10 \# q_3010 \space ┣ \space T10q_6 \# T10  \space $
+$┣^* \space Tq_010 \# T10 \space ┣ \space TTq_20 \# T10  \space $
+$┣^* \space TT0 \# Tq_410 \space ┣ \space TT0 \# q_6TT0  \space $
+$┣^* \space TTq_00 \# TT0 \space ┣ \space TTTq_1 \# TT0  \space $
+$┣^* \space TTT \# TTq_30 \space ┣ \space TTT \# Tq_6TT  \space $
+$┣^* \space TTq_5T \# TTT \space ┣ \space TTTq_0 \# TTT  \space $
+$┣ \space TTTq_7 \# TTT \space $
 
 ### 3.12 Class_3
 
-5.
-图灵机的变形:
+5. 图灵机的变形:
 * 多带图灵机
 * 非确定图灵机
 * 多指针图灵机
 * 多维图灵机
 * 离线图灵机
 
-语言:$L(M) = \{ω|q_0ω┣*xq_fy\}$称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
+语言: $L(M) = \{ω|q_0ω┣*xq_fy\}$ 称为M识别的语言.即图灵机M能够接受停机的所有输⼊信息串的集合就是M能识别的语言.
 
 * 可识别(可递归枚举):如果有图灵机识别⼀个语言,则称该语⾔是图灵可识别的
 * 可判定:如果有图灵机对所有输⼊都停机,则称该语言图灵可判定
@@ -382,7 +382,8 @@ $Homework 2:$
 2.编程实现
 输入λ表达式,输出该表达式的自由名集
 
-### 表达式归约
+### 表达式归约  
+
 $\begin{aligned}
 (λx.xz)(λy.y) &\rightarrow _\beta  (λy.y)z
 \newline &\rightarrow _\beta z
@@ -628,7 +629,7 @@ int main()
 
 2.纯Lambda演算实例
 * 自然数运算
-  * 整数定义:$\lambda ab. a(a(...(ab)...)) = \lambda ab. a^nb$
+  * 整数定义: $\lambda ab. a(a(...(ab)...)) = \lambda ab. a^nb$
     * $0=\lambda ab.b$
     * $n=\lambda ab.a^nb$
   * 运算:
