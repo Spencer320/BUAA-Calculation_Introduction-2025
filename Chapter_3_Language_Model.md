@@ -73,7 +73,7 @@ while i<=n :
 * 语言是正则的,当且仅当它可以被有限自动机接受
 
 
-$Homework 3:$
+$Homework 3:$  
 1.编写正则语言的识别算法
 
 2.构造一正则文法或有限自动机识别:含有子串011的所有0.1组成的串并给出一实例的识别过程.
@@ -172,7 +172,8 @@ int main()
 ```
 
 ### 正则文法识别子串
-正则文法 *G* 如下:    
+正则文法 *G* 如下:   
+
 $$\begin{aligned}
 G=(&\lbrace S, A, B, C\rbrace, \lbrace 0,1\rbrace, S,
      \newline &\lbrace S\to 0A,S\to 1S,
