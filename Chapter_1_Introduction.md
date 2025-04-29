@@ -9,9 +9,9 @@
 * Chomsky 文法
 * 文法 G 的定义
 文法 G 是一个四元组,表示为：**G = (V, T, P, S)**,其中:
-变量集合 (V):是变量的非空有穷集合.$\forall A \in V$  ,$A$ 称为**语法变量**或**非终极符号**.
-终极符集合 (T)：是终极符的非空有穷集合.$\forall a \in T$,$a$ 称为**终极符**.$V \cap T = \emptyset$.
-产生式集合 (P):是产生式的非空有穷集合.产生式形如 $\alpha \rightarrow \beta$,读作“$\alpha$ 定义为 $\beta$”.$\alpha \in (V \cup T)^+$,且 $\alpha$ 中至少包含一个非终极符号(即 $V$ 中的元素).$\beta \in (V \cup T)^*$(可以是空串).
+变量集合 (V):是变量的非空有穷集合. $\forall A \in V$  ,$A$ 称为**语法变量**或**非终极符号**.
+终极符集合 (T)：是终极符的非空有穷集合. $\forall a \in T$ , $a$ 称为**终极符**. $V \cap T = \emptyset$.
+产生式集合 (P):是产生式的非空有穷集合.产生式形如 $\alpha \rightarrow \beta$ ,读作“ $\alpha$ 定义为 $\beta$ ”. $\alpha \in (V \cup T)^+$ ,且 $\alpha$ 中至少包含一个非终极符号(即 $V$ 中的元素). $\beta \in (V \cup T)^*$ (可以是空串).
 开始符号 (S):是开始符号,且 $S \in V$.
 ## 计算能力与计算效率
 * 计算模型的计算能力由它可以计算的问题类的大小刻画

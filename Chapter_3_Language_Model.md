@@ -9,10 +9,10 @@
 1.文法
 绪论中提及过文法的定义,即:
 文法 G 是一个四元组,表示为：**G = (V, T, S, P)**,其中:
-* 变量集合 (V):是变量的非空有穷集合.$\forall A \in V$  ,$A$ 称为**语法变量**或**非终极符号**.
-* 终极符集合 (T)：是终极符的非空有穷集合.$\forall a \in T$,$a$ 称为**终极符**.$V \cap T = \emptyset$.
-* 开始符号 (S):是开始符号,且 $S \in V$.
-* 产生式集合 (P):是产生式的非空有穷集合.产生式形如 $\alpha \rightarrow \beta$,读作“$\alpha$ 定义为 $\beta$”.$\alpha \in (V \cup T)^+$,且 $\alpha$ 中至少包含一个非终极符号(即 $V$ 中的元素).$\beta \in (V \cup T)^*$(可以是空串).
+* 变量集合 (V):是变量的非空有穷集合. $\forall A \in V$  , $A$ 称为**语法变量**或**非终极符号**.
+* 终极符集合 (T)：是终极符的非空有穷集合. $\forall a \in T$ , $a$ 称为**终极符**. $V \cap T = \emptyset$ .
+* 开始符号 (S):是开始符号,且 $S \in V$ .
+* 产生式集合 (P):是产生式的非空有穷集合.产生式形如 $\alpha \rightarrow \beta$ ,读作“ $\alpha$  定义为 $\beta$ ”. $\alpha \in (V \cup T)^+$ ,且 $\alpha$ 中至少包含一个非终极符号(即 $V$ 中的元素). $\beta \in (V \cup T)^*$ (可以是空串).
 
 2.Chomsky文法分类
 3.正则文法
@@ -20,20 +20,20 @@
   * V:非终极符集合
   * T:终结符集合
   * S:文法开始符
-  * P:产生式集合,其中产生式形如$A \to a 或 A \to aB,a\in T,A,B\in V$
-* 正则语言:由G生成的语言,即$L_{(G)}={\omega |\omega \in T^*且S\Rightarrow ^*\omega}$
+  * P:产生式集合,其中产生式形如 $A \to a 或 A \to aB,a\in T,A,B\in V$
+* 正则语言:由G生成的语言,即 $L_{(G)}={\omega |\omega \in T^*且S\Rightarrow ^*\omega}$
 * 正则语言的识别:对于文法G,任给串ω能否被G识别
-  * 也就是证明是否有$S \Rightarrow *\omega$
+  * 也就是证明是否有 $S \Rightarrow *\omega$
   * 设$\omega = a_1a_2a_3...a_n,a_i\in T$,若n:
-    * $n = 1$,判断$S \rightarrow a_1$是否在$P$中;
-    * $n \geqslant 2$,判断是否有$S\rightarrow a_1B_1$, 进而证$B_1 \rightarrow a_2a_3...a_n$是否成立
+    * $n = 1$,判断 $S \rightarrow a_1$是否在$P$中;
+    * $n \geqslant 2$,判断是否有 $S\rightarrow a_1B_1$, 进而证 $B_1 \rightarrow a_2a_3...a_n$是否成立
     * 重复上述过程
   * 算法描述:从右向左推导
-    * P中选择右边为串ω的最右字符$a_n$,符合条件的产生式左边的非终极符组成一个集合$V_1$,即:
+    * P中选择右边为串ω的最右字符 $a_n$, 符合条件的产生式左边的非终极符组成一个集合 $V_1$ ,即:
     * $V_1=\{A_1 | A_1 \rightarrow a_n \in P\}$,同理:
     * ...
     * $V_k=\{A_k | A_k \rightarrow a_{n-k+1}A_{k-1} \in P,且A_{k-1}\in V_{k-1}\}$
-    * $V_n=...$,检查$S$是否属于$V_n$,若是,则可以由$S$推导出$\omega$,否则不能
+    * $V_n=...$,检查 $S$ 是否属于 $V_n$ ,若是,则可以由 $S$ 推导出 $\omega$ ,否则不能
   * 伪代码实现
 ```
 for a in w :
@@ -223,8 +223,8 @@ G = \Big(
   * V:非终极符集合
   * T:终结符集合
   * S:文法开始符
-  * P:产生式集合,其中产生式形如$A \to \beta, A \in V, \beta \in (  V \cup T )^*$
-* Chomsky范式:产生式形如$A \rightarrow BC 或 A \rightarrow a,其中a\in T,A,B,C \in V,且B,C \notin S,允许空产生式S \rightarrow \epsilon $
+  * P:产生式集合,其中产生式形如 $A \to \beta, A \in V, \beta \in (  V \cup T )^*$
+* Chomsky范式:产生式形如 $A \rightarrow BC 或 A \rightarrow a,其中a\in T,A,B,C \in V,且B,C \notin S,允许空产生式S \rightarrow \epsilon $
 * 任一上下文无关文法都可以等价转换为Chomsky范式
 * 上下文无关语言,上下文无关语言的识别
 * 相关定义:
@@ -266,7 +266,7 @@ $Homework 4$
 ## 下推自动机
 * 下推自动机(PDA)是一种抽象的计算模型
 * 下推自动机比有限状态自动机复杂:比自动机多一个长度不受限制的栈.
-* PDM定义:$M=(Q,\Gamma,\sum,\epsilon,\delta,q_0,Z_0,F)$
+* PDM定义: $M=(Q,\Gamma,\sum,\epsilon,\delta,q_0,Z_0,F)$
   * $Q:有限状态集$
   * $\Gamma :栈符号集$
   * $\sum :输入符号集$
@@ -275,19 +275,19 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定PDA
-  * 确定:$Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$
-  * 非确定:$Q\times (\sum \cup \{\epsilon\} \times \Gamma ^*)\rarr Q\times \Gamma ^*$
+  * 确定: $Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$
+  * 非确定: $Q\times (\sum \cup \{\epsilon\} \times \Gamma ^*)\rarr Q\times \Gamma ^*$
   * 确定PDA与非确定PDA是等价的
-* 初始格局:$(q_0,\omega ,Z_0)$
+* 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
-  * 空栈接受:$(q,\epsilon,\epsilon)$
-  * 空栈接受:$(q,\epsilon,\gamma),\gamma \in \Gamma ^*$
+  * 空栈接受: $(q,\epsilon,\epsilon)$
+  * 空栈接受: $(q,\epsilon,\gamma),\gamma \in \Gamma ^*$
   * 对于确定PDA,两种接受不等价,但对于非确定PDA是等价的
 
 ## 正则语言可计算
-* P类问题:$P= ⋃_kTIME(n^k)$
+* P类问题: $P= ⋃_kTIME(n^k)$
   * 是单带DTM在多项式时间内可判定的语言类
   * 所有与单带DTM多项式时间等价的计算模型,P类是稳定不变的
   * 对应计算机上实际可解的问题类
-* NP类问题:$NP = ⋃_kUTIME(n^k)$,其中$UTIME(t_{(n)})$时在NTM在$O(t_{(n)})$时间内可判定的语言集合
+* NP类问题: $NP = ⋃_kUTIME(n^k)$,其中 $UTIME(t_{(n)})$ 时在NTM在 $O(t_{(n)})$ 时间内可判定的语言集合
 * NPC:若NP中的每个语言A都多项式时间归约到B,则B是NP难的;若B又属于NP, 则B是NP完全的

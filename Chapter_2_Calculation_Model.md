@@ -167,7 +167,7 @@ $┣ \space YXXXYYq_0B$
 
 $$\begin{aligned}
 M  =&(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7\},\newline 
- &\{0,1,\#\}, \{0,1,\#,T,B\}, δ, q_0, B, \{q_7\})
+ &\{0,1,\\#\}, \{0,1,\\#,T,B\}, δ, q_0, B, \{q_7\})
  \end{aligned},其中:$$  
 
 | $\delta$ | 0           | 1           | #             | T           | B   |
@@ -183,15 +183,15 @@ M  =&(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7\},\newline
 
 #### 识别过程示例
 以串"010#010"为例:
-$q_0010 \# 010 $
-$┣ \space Tq_110 \# 010 \space $
-$┣^* \space T10 \# q_3010 \space ┣ \space T10q_6 \# T10  \space $
-$┣^* \space Tq_010 \# T10 \space ┣ \space TTq_20 \# T10  \space $
-$┣^* \space TT0 \# Tq_410 \space ┣ \space TT0 \# q_6TT0  \space $
-$┣^* \space TTq_00 \# TT0 \space ┣ \space TTTq_1 \# TT0  \space $
-$┣^* \space TTT \# TTq_30 \space ┣ \space TTT \# Tq_6TT  \space $
-$┣^* \space TTq_5T \# TTT \space ┣ \space TTTq_0 \# TTT  \space $
-$┣ \space TTTq_7 \# TTT \space $
+$q_0010 \\# 010 $
+$┣ \space Tq_110 \\# 010 \space $
+$┣^* \space T10 \\# q_3010 \space ┣ \space T10q_6 \\# T10  \space $
+$┣^* \space Tq_010 \\# T10 \space ┣ \space TTq_20 \\# T10  \space $
+$┣^* \space TT0 \\# Tq_410 \space ┣ \space TT0 \\# q_6TT0  \space $
+$┣^* \space TTq_00 \\# TT0 \space ┣ \space TTTq_1 \\# TT0  \space $
+$┣^* \space TTT \\# TTq_30 \space ┣ \space TTT \\# Tq_6TT  \space $
+$┣^* \space TTq_5T \\# TTT \space ┣ \space TTTq_0 \\# TTT  \space $
+$┣ \space TTTq_7 \\# TTT \space $
 
 ### 3.12 Class_3
 
@@ -263,7 +263,7 @@ Church－Turning论题：
   * 输出带为空
 * RAM程序P:指令/伪指令的有限序列,以HALT结尾,表征输入到输出的函数$f(x_1, …, x_n) = (y_1, …, y_m)$
 
-例:输⼊$X_1X_2…X_i…X_n0$,其中$X_i$为1或2,判断1和2出现的个数是否相同?
+例:输⼊ $X_1X_2…X_i…X_n0$ ,其中 $X_i$ 为1或2,判断1和2出现的个数是否相同?
 思路:读1加一,读2减一,若读0时结果为0则相等
 程序:
 ```
@@ -384,15 +384,15 @@ $Homework 2:$
 
 ### 表达式归约  
 
-$\begin{aligned}
+$$\begin{aligned}
 (λx.xz)(λy.y) &\rightarrow _\beta  (λy.y)z
 \newline &\rightarrow _\beta z
-\end{aligned}$ 
+\end{aligned}$$ 
 
-$\begin{aligned}
+$$\begin{aligned}
 (λx.xy)(λx.xu) &\rightarrow _\beta  (λx.xu)y
 \newline &\rightarrow _\beta  yu
-\end{aligned}$ 
+\end{aligned}$$ 
 
 ### 编程实现
 ``` C++
