@@ -261,7 +261,7 @@ Church－Turning论题：
   * 位置计数器指向程序P的第⼀条指令;
   * 输⼊串放在输⼊带上,读头指向输⼊串的第⼀个符号;
   * 输出带为空
-* RAM程序P:指令/伪指令的有限序列,以HALT结尾,表征输入到输出的函数$f(x_1, …, x_n) = (y_1, …, y_m)$
+* RAM程序P:指令/伪指令的有限序列,以HALT结尾,表征输入到输出的函数 $f(x_1, …, x_n) = (y_1, …, y_m)$
 
 例:输⼊ $X_1X_2…X_i…X_n0$ ,其中 $X_i$ 为1或2,判断1和2出现的个数是否相同?
 思路:读1加一,读2减一,若读0时结果为0则相等
@@ -341,17 +341,17 @@ __记法约定__:
   $\lambda x_1. \, \lambda x_2. \, \dots \, \lambda x_n. \, E_1 \, E_2 \, \dots \, E_n \equiv \lambda x_1. \, \lambda x_2. \, \dots \, \lambda x_n. \, (E_1 \, E_2 \, \dots \, E_n)$
 
 __相关定义__:
-* 作用域:对于$\lambda x . E$, x 的作用域是 E
+* 作用域:对于 $\lambda x . E$, x 的作用域是 E
 * 约束出现与自由出现:
-  * 变量 x 在表达式$\lambda x . E$的出现为约束出现
+  * 变量 x 在表达式 $\lambda x . E$的出现为约束出现
   * 当变量 x 出现的位置不被任一表达式约束时, x 的出现为自由出现
 * 自由变量: x 在 E 中自由出现时, x 是 E 中的自由变量
-  * 用$fv_{(E)}$表示E中所有自由变量集
+  * 用 $fv_{(E)}$ 表示E中所有自由变量集
   * $fv_{(x)} = \{x\}$
   * $fv_{(E_1 E_2)} = fv_{(E_1)} \cup fv_{(E_2)}$
   * $fv_{(\lambda x . E)} = fv_{(E)} - \{x\}$
   * $fv_{((E))} = fv_{(E)}$
-* 替换:$E[E_0/x]$:将 E 中 x 的自由出现用 E<sub>0</sub> 替代.
+* 替换: $E[E_0/x]$ :将 E 中 x 的自由出现用 E<sub>0</sub> 替代.
   * \( E \equiv x \) : \[x[E_0/x] = E_0\]
   * \( E \equiv y  \)且 \( x \neq y  \):\[y[E_0/x] = y\]
   * \( E \equiv E_1 \, E_2 \):\[(E_1 \, E_2)[E_0/x] = (E_1[E_0/x]) \, (E_2[E_0/x])\]
@@ -361,9 +361,9 @@ __相关定义__:
     * 否则:\[(\lambda y. E')[E_0/x] = \lambda y. E'[E_0/x]\]
 
 __变换规则__:
-* α变换(换名规则):$\lambda x . E \rightarrow _\alpha \lambda y . E[y/x]$,其中$x \not = y$ 且 $y \notin fv_{(E)}$
-* β变换(应用规则):$(\lambda x . E)E_0 \rightarrow _\beta E[E_0/x]$
-* η变换(保值变换):$(\lambda x . M x) \rightarrow _\eta M$,其中$x \notin fv_{(M)}$
+* α变换(换名规则): $\lambda x . E \rightarrow _\alpha \lambda y . E[y/x]$ ,其中 $x \not = y$ 且 $y \notin fv_{(E)}$
+* β变换(应用规则): $(\lambda x . E)E_0 \rightarrow _\beta E[E_0/x]$
+* η变换(保值变换): $(\lambda x . M x) \rightarrow _\eta M$ ,其中 $x \notin fv_{(M)}$
 
 __归约__:
 * 归约基:__β变换和η变换__ 的左部

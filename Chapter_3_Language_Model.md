@@ -21,11 +21,11 @@
   * T:终结符集合
   * S:文法开始符
   * P:产生式集合,其中产生式形如 $A \to a 或 A \to aB,a\in T,A,B\in V$
-* 正则语言:由G生成的语言,即 $L_{(G)}={\omega |\omega \in T^*且S\Rightarrow ^*\omega}$
+* 正则语言:由G生成的语言,即 $L_{(G)}={\omega |\omega \in T^*且S\Rightarrow ^*\omega}$  
 * 正则语言的识别:对于文法G,任给串ω能否被G识别
   * 也就是证明是否有 $S \Rightarrow *\omega$
-  * 设$\omega = a_1a_2a_3...a_n,a_i\in T$,若n:
-    * $n = 1$,判断 $S \rightarrow a_1$是否在$P$中;
+  * 设 $\omega = a_1a_2a_3...a_n,a_i\in T$,若n:
+    * $n = 1$,判断 $S \rightarrow a_1$ 是否在 $P$ 中;
     * $n \geqslant 2$,判断是否有 $S\rightarrow a_1B_1$, 进而证 $B_1 \rightarrow a_2a_3...a_n$是否成立
     * 重复上述过程
   * 算法描述:从右向左推导
@@ -173,42 +173,42 @@ int main()
 
 ### 正则文法识别子串
 正则文法如下: 
-\[
+$$
 G = \Big(
 \{S, A, B, C\},\{0,1\},S,
 \{\,S\rightarrow 0A,\; S\rightarrow 1S,\; A\rightarrow 0A,\; A\rightarrow 1B,\; B\rightarrow 0A,\; B\rightarrow 1C,\; C\rightarrow 0C,\; C\rightarrow 1C,\; C\rightarrow 0,\; C\rightarrow 1\,\}
 \Big)
-\]
+$$
 具体解释如下:
-- \(V = \{S, A, B, C\}\)
-  1. \(S\)表示初始状态
-  2. \(A\)表示读到子串0
-  3. \(B\)表示读到子串01
-  4. \(C\)表示读到串011
-- \(T = \{0, 1\}\)
-- \(S\) 为开始符
-- \(P\) 为产生式集合，具体为：
-  1. \(S \rightarrow 0A\)
-  2. \(S \rightarrow 1S\)
-  3. \(A \rightarrow 0A\)
-  4. \(A \rightarrow 1B\)
-  5. \(B \rightarrow 0A\)
-  6. \(B \rightarrow 1C\)
-  7. \(C \rightarrow 0C\)
-  8. \(C \rightarrow 1C\)
-  9. \(C \rightarrow 0\)
-  10. \(C \rightarrow 1\)
+- $V = \{S, A, B, C\}$
+  1. $S$ 表示初始状态
+  2. $A$ 表示读到子串0
+  3. $B$ 表示读到子串01
+  4. $C$ 表示读到串011
+- $T = \{0, 1\}$ 
+- $S$  为开始符
+- $P$  为产生式集合，具体为：
+  1. $S \rightarrow 0A$ 
+  2. $S \rightarrow 1S$ 
+  3. $A \rightarrow 0A$ 
+  4. $A \rightarrow 1B$ 
+  5. $B \rightarrow 0A$ 
+  6. $B \rightarrow 1C$ 
+  7. $C \rightarrow 0C$ 
+  8. $C \rightarrow 1C$ 
+  9. $C \rightarrow 0$ 
+  10. $C \rightarrow 1$ 
 
 实例识别过程:
 以串"01011011"为例:
-- \(a_1 = 0,B_1 = 1011011\),由于有\(S \rightarrow 0A\),即判断$B_1 \rightarrow a_2...a_8$是否成立.
-- \(a_2 = 1,B_2 = 011011,A \rightarrow 1B \Rightarrow B2 \rightarrow a_3...a_8\)
-- \(a_3 = 0,B_3 = 11011,B \rightarrow 0A \Rightarrow B3 \rightarrow a_4...a_8\)
-- \(a_4 = 1,B_4 = 1011,A \rightarrow 1B \Rightarrow B4 \rightarrow a_5...a_8\)
-- \(a_5 = 1,B_5 = 011,B \rightarrow 1C \Rightarrow B5 \rightarrow a_6...a_8\)
-- \(a_6 = 0,B_6 = 11,C \rightarrow 0C \Rightarrow B6 \rightarrow a_7a_8\)
-- \(a_7 = 1,B_7 = 1,C \rightarrow 1C \Rightarrow B7 \rightarrow a_8\)
-- \(B_7 = 1\),只有一个字符,由于有\(C \rightarrow 1\),故识别结果为接受
+- $a_1 = 0,B_1 = 1011011$ ,由于有 $S \rightarrow 0A$ ,即判断$B_1 \rightarrow a_2...a_8$是否成立.
+- $a_2 = 1,B_2 = 011011,A \rightarrow 1B \Rightarrow B2 \rightarrow a_3...a_8$ 
+- $a_3 = 0,B_3 = 11011,B \rightarrow 0A \Rightarrow B3 \rightarrow a_4...a_8$ 
+- $a_4 = 1,B_4 = 1011,A \rightarrow 1B \Rightarrow B4 \rightarrow a_5...a_8$ 
+- $a_5 = 1,B_5 = 011,B \rightarrow 1C \Rightarrow B5 \rightarrow a_6...a_8$ 
+- $a_6 = 0,B_6 = 11,C \rightarrow 0C \Rightarrow B6 \rightarrow a_7a_8$ 
+- $a_7 = 1,B_7 = 1,C \rightarrow 1C \Rightarrow B7 \rightarrow a_8$ 
+- $B_7 = 1$ ,只有一个字符,由于有$C \rightarrow 1$,故识别结果为接受
 
 
 ### 4.9 Class_7
@@ -228,9 +228,9 @@ G = \Big(
 * 任一上下文无关文法都可以等价转换为Chomsky范式
 * 上下文无关语言,上下文无关语言的识别
 * 相关定义:
-  * $\omega = x_1x_2...x_n$
-  * $\omega _{ij} = x_i...x_{i+j-1}$
-  * $V_{ij}=\{A|A\Rightarrow ^*\omega_{ij}\}$
+  * $\omega = x_1x_2...x_n$  
+  * $\omega _{ij} = x_i...x_{i+j-1}$  
+  * $V_{ij}=\{A|A\Rightarrow ^*\omega_{ij}\}$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
   * $若n\geqslant 2,判断(S \to BC) \in P, 且BC \Rightarrow ^+ \omega,即是否有:B \Rightarrow ^+\omega_{1k},C\Rightarrow ^+\omega _{(k+1)(n-k)}$
@@ -275,8 +275,8 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定PDA
-  * 确定: $Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$
-  * 非确定: $Q\times (\sum \cup \{\epsilon\} \times \Gamma ^*)\rarr Q\times \Gamma ^*$
+  * 确定: $Q\times (\sum \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
+  * 非确定: $Q\times (\sum \cup \{\epsilon\} \times \Gamma ^*)\rarr Q\times \Gamma ^*$  
   * 确定PDA与非确定PDA是等价的
 * 初始格局: $(q_0,\omega ,Z_0)$
 * 接受格局:
