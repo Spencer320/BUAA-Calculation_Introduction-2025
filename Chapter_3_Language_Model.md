@@ -260,7 +260,7 @@ for j:=2 to n :
 return !V[1][n].empty()
 ```
 
-$Homework 4$
+$Homework 4$  
 将下面文法转换为乔姆斯基范式  
     S &rarr; aSbS  
     S &rarr; bSaS  
