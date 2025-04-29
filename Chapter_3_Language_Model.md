@@ -234,7 +234,7 @@ int main()
 * 上下文无关语言,上下文无关语言的识别
 * 相关定义:
   * $\omega = x_1x_2...x_n$  
-  * $\omega \\_{ij} = x\\_i...x_{i+j-1}$  
+  * $\omega _{ij} = x_{i}...x_{i+j-1}$  
   * $V_{ij}=\lbrace A|A\Rightarrow ^*\omega_{ij}\rbrace$  
 * 识别算法:
   * $若n=1,判断S \to x_1,是否在P中$
@@ -280,8 +280,8 @@ $Homework 4$
   * $F \subseteq Q:终止状态集$
   * $\delta :转换函数$
 * 确定/非确定 PDA
-  * 确定： $Q \times (\Sigma \times \Gamma \\^ *) \to Q \times \Gamma \\^ *$
-  * 非确定： $Q \times (\Sigma \cup \{\epsilon\} \times \Gamma^*) \to Q \times \Gamma^*$
+  * 确定： $Q \times (\Sigma \times \Gamma ^{\\*}) \to Q \times \Gamma \\^{\\*}$
+  * 非确定： $Q \times (\Sigma \cup \{\epsilon\} \times \Gamma \\^*) \to Q \times \Gamma \\^*$
   * 确定 PDA 与 非确定 PDA 是等价的  
 
 * 初始格局: $(q_0,\omega ,Z_0)$
